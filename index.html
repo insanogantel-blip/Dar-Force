@@ -136,6 +136,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
+        /* Menú de Navegación */
         nav {
             display: flex;
             justify-content: center;
@@ -160,6 +161,7 @@
             color: white;
         }
 
+        /* Contenedor de Canales */
         .canal-contenido {
             display: none;
             padding: 40px;
@@ -181,6 +183,7 @@
             padding-left: 10px;
         }
 
+        /* Estilos específicos para el Botón de Descarga */
         .btn-descarga {
             display: inline-block;
             background: linear-gradient(135deg, var(--color-secundario), #b3002a);
@@ -201,6 +204,7 @@
             box-shadow: 0 5px 25px rgba(255, 0, 60, 0.7);
         }
 
+        /* Cuadrículas para multimedia */
         .grid-media {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -261,9 +265,8 @@
             <p>Tutoriales, administración y promociones en nuestras redes:</p>
             <div class="grid-media">
                 <div class="card"><h3>TikTok</h3><p>@DarForceOficial</p></div>
-                <div class="card"><h3>Instagram</h3><p>@proximamente</p></div>
-                <div class="card"><h3>YouTube</h3><p>Proximamente</p></div>
-            
+                <div class="card"><h3>Instagram</h3><p>@DarForceGame</p></div>
+                <div class="card"><h3>YouTube</h3><p>Video Tutoriales de administración</p></div>
             </div>
         </section>
 
@@ -285,13 +288,14 @@
     </div>
 
     <script>
-
+// Función para activar la web tras el click en la intro
         function iniciarWeb() {
             const sonido = document.getElementById('voz-tenebrosa');
             
-            sonidor.play().catch(error => console.log("Sonido esperando interacción"));
+            // CORREGIDO: Ya no tiene la "r" de más
+            sonido.play().catch(error => console.log("Sonido esperando interacción"));
 
-
+            // Esperamos a que terminen las animaciones de la intro (aprox 4.5 segundos)
             setTimeout(() => {
                 document.getElementById('intro-panel').style.display = 'none';
                 document.getElementById('main-content').style.display = 'flex';
@@ -299,20 +303,25 @@
             }, 4500);
         }
 
+        // Función para cambiar de canal con la animación de los militares
         function cambiarCanal(canalId) {
             const panelCarga = document.getElementById('loading-panel');
             const botones = document.querySelectorAll('.nav-btn');
             const canales = document.querySelectorAll('.canal-contenido');
 
+            // 1. Mostrar pantalla de carga
             panelCarga.style.display = 'flex';
 
+            // 2. Simular tiempo de carga (1.5 segundos)
             setTimeout(() => {
-
+                // Ocultar carga
                 panelCarga.style.display = 'none';
 
+                // Cambiar clase activa en los botones del menú
                 botones.forEach(btn => btn.classList.remove('active'));
                 event.currentTarget.classList.add('active');
 
+                // Mostrar el canal seleccionado y ocultar los demás
                 canales.forEach(canal => canal.classList.remove('active'));
                 document.getElementById(canalId).classList.add('active');
             }, 1500);
