@@ -233,7 +233,7 @@
     <div id="loading-panel">
         <div class="loading-text">Cargando Canal...</div>
         <div class="barra-militar-contenedor">
-            <div class="militares-corriendo">🪖🏃‍♂️ 🪖 🪖 🪖</div>
+            <div class="militares-corriendo">🏃‍♀️🏃‍♂️🏃 🚐 </div>
         </div>
     </div>
 
@@ -255,7 +255,7 @@
             <div class="grid-media">
                 <div class="card">
                     <h3>Versión Alpha 0.1</h3>
-                    <p>Subida de los primeros mapeos y scripts base del juego.</p>
+                    <p>Proximamente
                 </div>
             </div>
         </section>
@@ -271,7 +271,7 @@
         </section>
 
         <section id="descarga" class="canal-contenido" style="text-align: center; padding-top: 80px;">
-            <h2>Obtén el Juego</h2>
+            <h2>Obtén el Juego Gratis </h2>
             <p style="margin-bottom: 30px;">Haz clic abajo para bajarte el instalador directo de Dar Force.</p>
             <a href="AQUÍ_VA_TU_LINK_DE_DESCARGA" class="btn-descarga">Descargar Dar Force</a>
         </section>
@@ -280,22 +280,19 @@
             <h2>Créditos y Personal</h2>
             <p>El equipo detrás del progreso y desarrollo del sistema:</p>
             <div class="grid-media">
-                <div class="card"><strong>Mapeos:</strong> [Tu Nombre/Amigo]</div>
-                <div class="card"><strong>Diseñadores:</strong> [Tu Nombre/Amigo]</div>
-                <div class="card"><strong>Scripts y Progreso:</strong> [Tu Nombre/Amigo]</div>
+                <div class="card"><strong>Mapiadores </strong> </div>
+                <div class="card"><strong>Diseñadores:</strong> Keilerft </div>
+                <div class="card"><strong>Scripts y Progreso:</strong> Ariel Dueñoz</div>
             </div>
         </section>
     </div>
 
     <script>
-// Función para activar la web tras el click en la intro
         function iniciarWeb() {
             const sonido = document.getElementById('voz-tenebrosa');
             
-            // CORREGIDO: Ya no tiene la "r" de más
             sonido.play().catch(error => console.log("Sonido esperando interacción"));
 
-            // Esperamos a que terminen las animaciones de la intro (aprox 4.5 segundos)
             setTimeout(() => {
                 document.getElementById('intro-panel').style.display = 'none';
                 document.getElementById('main-content').style.display = 'flex';
